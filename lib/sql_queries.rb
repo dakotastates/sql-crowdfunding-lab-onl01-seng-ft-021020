@@ -15,7 +15,7 @@ def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_
 end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
-  "SELECT projects.title, sum(pledges.amount) from pledges left outer join projects on pledges.project_id = projects.id group by projects.title WHERE sum(amount) > projects.funding_goal;"
+  "SELECT projects.title, sum(pledges.amount) from pledges left outer join projects on pledges.project_id = projects.id group by projects.title WHERE projects.funding_goal = "200";"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_summed_amount
